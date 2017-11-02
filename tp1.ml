@@ -10,7 +10,7 @@ let reverse nb =
 	in reverse1 nb 0;; 
 
 (* Prime *)
-let prime nb = g
+let prime nb = 
 	if nb < 2 then 
 		invalid_arg "Erreur 1 : Le nombre doit etre superieur a 2"
 	else
@@ -21,4 +21,11 @@ let prime nb = g
 				if ((nb mod n) = 0) then 
 					false 
 				else prime1 (n-1) 
-		in prime1 (nb-1)  
+		in prime1 (nb-1) ;; 
+
+(* Listes *)
+
+(* Longueur *)
+let rec length = function 
+	| [] 	-> 0
+	| _::r 	-> 1 + length r ;; 
