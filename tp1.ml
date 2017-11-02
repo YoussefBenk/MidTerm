@@ -36,3 +36,16 @@ let rec count value liste =
 		| [] 	-> 0 
 		| t::r 	-> (if t = value then 1 else 0) + (count value r) ;;    
 	
+(* Renvoie le ieme element *)
+let rec nth position liste = 
+	match (position, liste) with
+		| (1, t::_)	-> t 
+		| (_, []) 	-> invalid_arg "Erreur 2 : Liste trop courte"
+		| (n, _::r) -> (nth (n-1) r) ;; 
+
+(* Renvoie la position d'un element *)
+let rec search_pos value liste = 
+	match liste with 
+		| [] 					-> invalid_arg "Erreur 3 : L'element ne fait pas partie de la liste"
+		| t::_  when t = value	-> 1 
+		| _::r 					-> 1 + search_pos value r ;;  
