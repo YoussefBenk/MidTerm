@@ -55,3 +55,9 @@ let rec init_list n value =
 	match n with 
 		| 0 -> []
 		| _ -> value::(init_list (n-1) value) ;; 
+
+(* Retourne une liste *) 
+let rec reverse_list list = 
+	match list with 
+		| [] 	-> []
+		| t::r 	-> (reverse_list r) @ [t] ;; 
