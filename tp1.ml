@@ -49,3 +49,9 @@ let rec search_pos value liste =
 		| [] 					-> invalid_arg "Erreur 3 : L'element ne fait pas partie de la liste"
 		| t::_  when t = value	-> 1 
 		| _::r 					-> 1 + search_pos value r ;;  
+
+(* Cree une liste *)
+let rec init_list n value = 
+	match n with 
+		| 0 -> []
+		| _ -> value::(init_list (n-1) value) ;; 
