@@ -29,3 +29,10 @@ let prime nb =
 let rec length = function 
 	| [] 	-> 0
 	| _::r 	-> 1 + length r ;; 
+
+(* Count *)
+let rec count value liste = 
+	match liste with 
+		| [] 	-> 0 
+		| t::r 	-> (if t = value then 1 else 0) + (count value r) ;;    
+	
